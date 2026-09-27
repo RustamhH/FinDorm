@@ -1,0 +1,3 @@
+{"version":"0.0.1","configurations":[
+{"name":"api","runtimeExecutable":"dotnet","runtimeArgs":["run","--project","backend/AzeRealtor.Api"],"port":5254},
+{"name":"web","runtimeExecutable":"npm","runtimeArgs":["--prefix","frontend","run","dev"],"port":3000}]}
