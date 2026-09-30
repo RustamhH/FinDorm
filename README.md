@@ -1,1 +1,1 @@
-FinDorm app
+FinDorm App
