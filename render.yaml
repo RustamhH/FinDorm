@@ -7,4 +7,4 @@ services:
     plan: free
     envVars:
       - key: ALLOWED_ORIGINS
-        value: https://your-frontend.vercel.app
+        value: https://findorm.vercel.app
