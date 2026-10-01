@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: findorm-api
+    runtime: docker
+    dockerfilePath: ./backend/AzeRealtor.Api/Dockerfile
+    dockerContext: ./backend/AzeRealtor.Api
+    plan: free
+    envVars:
+      - key: ALLOWED_ORIGINS
+        value: https://your-frontend.vercel.app

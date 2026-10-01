@@ -6,8 +6,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddSingleton<ListingRepository>();
 builder.Services.AddHttpClient<RouteService>(c => { c.Timeout = TimeSpan.FromSeconds(20); c.DefaultRequestHeaders.UserAgent.ParseAdd("AzeRealtor/1.0"); });
 builder.Services.ConfigureHttpJsonOptions(o => o.SerializerOptions.Converters.Add(new JsonStringEnumConverter()));
+// Extra allowed origins (e.g. the deployed Next.js site) via the ALLOWED_ORIGINS env var, comma-separated.
+var extraOrigins = (Environment.GetEnvironmentVariable("ALLOWED_ORIGINS") ?? "")
+    .Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
 builder.Services.AddCors(o => o.AddDefaultPolicy(p => p
-    .WithOrigins("http://localhost:3000", "http://127.0.0.1:3000")
+    .WithOrigins(["http://localhost:3000", "http://127.0.0.1:3000", .. extraOrigins])
     .AllowAnyHeader().AllowAnyMethod()));
 
 var app = builder.Build();

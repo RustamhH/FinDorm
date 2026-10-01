@@ -1,0 +1,15 @@
+## .NET
+backend/**/bin/
+backend/**/obj/
+*.user
+backend/AzeRealtor.Api/Data/routes-cache.json
+
+## Next.js
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/.env*.local
+
+## OS / editor
+.DS_Store
+Thumbs.db
